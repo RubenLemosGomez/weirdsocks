@@ -3,141 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WEIRDSOCKS - Banda Indie</title>
+    <meta name="description" content="WEIRDSOCKS - Banda indie de Cangas. Escucha nuestra música, descubre lore oculto y encuentra easter eggs.">
+    <title>WEIRDSOCKS</title>
     
-    <!-- Fuentes Y2K -->
+    <!-- Google Fonts Y2K -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Press+Start+2P&family=Righteous&family=Audiowide&family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&family=Space+Mono:wght@400;700&family=Orbitron:wght@900&display=swap" rel="stylesheet">
     
-    <!-- Tu CSS externo -->
+    <!-- CSS externo -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
-    <div class="main-window">
-        
-        <header class="top-header">
-            <div class="header-shape">
-                <h1 class="site-logo">WEIRDSOCKS</h1>
-                <div class="butterfly-deco">🦋</div>
+
+    <!-- =========================== -->
+    <!-- HERO SECTION - Full screen  -->
+    <!-- Inspirado en myantiaircraftfriend.com + nettspend.io -->
+    <!-- =========================== -->
+    <section class="hero-section" id="home">
+        <div class="hero-content">
+            <!-- Título enorme tipo nettspend.io -->
+            <h1 class="hero-title">WEIRDSOCKS</h1>
+            <p class="hero-subtitle">BANDA INDIE · CANGAS</p>
+            
+            <!-- Indicador de scroll -->
+            <div class="scroll-indicator">
+                <span>↓</span>
             </div>
-        </header>
-
-        <div class="content-grid">
-            
-            <aside class="left-column">
-                <div class="character-container">
-                    <div class="character-frame">
-                        <img src="images/character.png" alt="WEIRDSOCKS" class="character-img">
-                    </div>
-                </div>
-                
-                <div class="arrow-left">
-                    <svg width="80" height="80" viewBox="0 0 80 80">
-                        <path d="M10 40 L50 10 L50 30 L70 30 L70 50 L50 50 L50 70 Z" fill="#00ff00" stroke="#fff" stroke-width="2"/>
-                    </svg>
-                </div>
-            </aside>
-
-            <main class="center-column">
-                
-                <div class="video-frame">
-                    <div class="video-inner">
-                        <video id="mainVideo" poster="images/poster.jpg">
-                            <source src="videos/promo.mp4" type="video/mp4">
-                            Tu navegador no soporta video
-                        </video>
-                        
-                        <div class="video-credits">
-                            <p>&copy; 2025 WEIRDSOCKS Inc</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="video-controls">
-                    <button class="control-btn" id="playBtn">
-                        <span>&#9654;</span>
-                    </button>
-                    <button class="control-btn" id="pauseBtn">
-                        <span>&#10074;&#10074;</span>
-                    </button>
-                    <button class="control-btn" id="muteBtn">
-                        <span>&#128266;</span>
-                    </button>
-                </div>
-
-            </main>
-
-            <aside class="right-column">
-                
-                <div class="arrow-right">
-                    <svg width="80" height="80" viewBox="0 0 80 80">
-                        <path d="M70 40 L30 10 L30 30 L10 30 L10 50 L30 50 L30 70 Z" fill="#00ff00" stroke="#fff" stroke-width="2"/>
-                    </svg>
-                </div>
-
-                <div class="features-box">
-                    <h2 class="features-title">Join the fun!</h2>
-                    
-                    <ul class="features-list">
-                        <li>
-                            <span class="feature-icon">&#127925;</span>
-                            <span>Escucha música!</span>
-                        </li>
-                        <li>
-                            <span class="feature-icon">&#127918;</span>
-                            <span>Juega juegos!</span>
-                        </li>
-                        <li>
-                            <span class="feature-icon">&#127912;</span>
-                            <span>Descubre lore!</span>
-                        </li>
-                        <li>
-                            <span class="feature-icon">&#128172;</span>
-                            <span>Chatea con fans!</span>
-                        </li>
-                    </ul>
-
-                    <button class="register-button">register now</button>
-
-                    <div class="login-section">
-                        <p class="login-heading">Already registered? Sign in!</p>
-                        
-                        <form class="login-form" id="loginForm">
-                            <label for="username">screen name:</label>
-                            <input type="text" id="username" name="username" placeholder="tu nombre">
-                            
-                            <label for="password">password:</label>
-                            <input type="password" id="password" name="password" placeholder="tu contraseña">
-                            
-                            <a href="#" class="forgot-password">forgot password?</a>
-                            
-                            <button type="submit" class="submit-button">wait...</button>
-                        </form>
-                    </div>
-                </div>
-
-            </aside>
-            
         </div>
+    </section>
 
-        <footer class="bottom-footer">
-            <div class="footer-buttons">
-                <button class="footer-btn">message to parents</button>
-                <button class="footer-btn">tips for girls</button>
+    <!-- =========================== -->
+    <!-- NAVIGATION - Sticky menu    -->
+    <!-- Inspirado en after.band + depresionsonora.com -->
+    <!-- =========================== -->
+    <nav class="main-nav" id="mainNav">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">WEIRDSOCKS</a>
+            <ul class="nav-menu">
+                <li><a href="#music" class="nav-link">música</a></li>
+                <li><a href="#tour" class="nav-link">tour</a></li>
+                <li><a href="#gallery" class="nav-link">galería</a></li>
+                <li><a href="#about" class="nav-link">bio</a></li>
+                <li><a href="#contact" class="nav-link">contacto</a></li>
+                <!-- Easter egg: link oculto -->
+                <li><a href="archivo-x.html" class="nav-link hidden-link">???</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- =========================== -->
+    <!-- MUSIC SECTION - Player      -->
+    <!-- Inspirado en after.band -->
+    <!-- =========================== -->
+    <section class="music-section" id="music">
+        <div class="section-container">
+            <h2 class="section-title">ESCUCHA</h2>
+            
+            <!-- Player de música (Spotify/Bandcamp embed) -->
+            <div class="music-player">
+                <!-- Reemplaza con tu embed real de Spotify/Bandcamp -->
+                <iframe 
+                    style="border-radius:12px" 
+                    src="https://open.spotify.com/embed/track/3n3Ppam7vgaVa1iaRUc9Lp?utm_source=generator" 
+                    width="100%" 
+                    height="380" 
+                    frameBorder="0" 
+                    allowfullscreen="" 
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    loading="lazy">
+                </iframe>
             </div>
             
-            <div class="footer-legal">
-                <a href="#">Legal Terms &amp; Conditions</a> | 
-                <a href="#">Tips for Girls</a> | 
-                <a href="#">Message to Parents</a> | 
-                <a href="#">Site Tour</a>
+            <!-- Álbum destacado estilo myantiaircraftfriend.com -->
+            <div class="album-promo">
+                <div class="album-cover">
+                    <img src="images/album-cover.jpg" alt="Debut Album">
+                </div>
+                <div class="album-info">
+                    <h3 class="album-title">Debut Album</h3>
+                    <p class="album-release">Disponible ahora</p>
+                    <div class="album-links">
+                        <a href="#" class="album-btn">Spotify</a>
+                        <a href="#" class="album-btn">Bandcamp</a>
+                        <a href="#" class="album-btn">Apple Music</a>
+                    </div>
+                </div>
             </div>
-        </footer>
+        </div>
+    </section>
 
-    </div>
+    <!-- =========================== -->
+    <!-- TOUR SECTION - Dates        -->
+    <!-- Inspirado en nettspend.io + after.band -->
+    <!-- =========================== -->
+    <section class="tour-section" id="tour">
+        <div class="section-container">
+            <h2 class="section-title">PRÓXIMOS SHOWS</h2>
+            
+            <!-- Lista de conciertos -->
+            <div class="tour-list">
+                
+                <!-- Concierto 1 -->
+                <div class="tour-item">
+                    <div class="tour-date">
+                        <span class="date-day">15</span>
+                        <span class="date-month">DIC</span>
+                    </div>
+                    <div class="tour-info">
+                        <h3 class="tour-city">Vigo, España</h3>
+                        <p class="tour-venue">Sala Capitol</p>
+                    </div>
+                    <div class="tour-status">
+                        <span class="status-badge available">tickets</span>
+                    </div>
+                    <a href="#" class="tour-link">Ver más</a>
+                </div>
 
+                <!-- Concierto 2 -->
+                <div class="tour-item">
+                    <div class="tour-date">
+                        <span class="date-day">20</span>
+                        <span class="date-month">DIC</span>
+                    </div>
+                    <div class="tour-info">
+                        <h3 class="tour-city">Santiago, España</h3>
+                        <p class="tour-venue">Sala Mardi Gras</p>
+                    </div>
+                    <div class="tour-status">
+                        <span class="status-badge low">low tickets</span>
+                    </div>
+                    <a href="#" class="tour-link">Ver más</a>
+                </div>
+
+                <!-- Concierto 3 -->
+                <div class="tour-item">
+                    <div class="tour-date">
+                        <span class="date-day">28</span>
+                        <span class="date-month">DIC</span>
+                    </div>
+                    <div class="tour-info">
+                        <h3 class="tour-city">A Coruña, España</h3>
+                        <p class="tour-venue">Mardi Gras</p>
+                    </div>
+                    <div class="tour-status">
+                        <span class="status-badge sold">sold out</span>
+                    </div>
+                    <a href="#" class="tour-link disabled">Agotado</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================== -->
+    <!-- GALLERY SECTION - Grid      -->
+    <!-- Inspirado en julianachahayed.com -->
+    <!-- =========================== -->
+    <section class="gallery-section" id="gallery">
+        <div class="section-container">
+            <h2 class="section-title">GALERÍA</h2>
+            
+            <!-- Grid de fotos -->
+            <div class="photo-grid">
+                <div class="photo-item">
+                    <img src="https://picsum.photos/400/400?random=1" alt="WEIRDSOCKS Photo 1">
+                </div>
+                <div class="photo-item">
+                    <img src="https://picsum.photos/400/400?random=2" alt="WEIRDSOCKS Photo 2">
+                </div>
+                <div class="photo-item">
+                    <img src="https://picsum.photos/400/400?random=3" alt="WEIRDSOCKS Photo 3">
+                </div>
+                <div class="photo-item">
+                    <img src="https://picsum.photos/400/400?random=4" alt="WEIRDSOCKS Photo 4">
+                </div>
+                <div class="photo-item">
+                    <img src="https://picsum.photos/400/400?random=5" alt="WEIRDSOCKS Photo 5">
+                </div>
+                <div class="photo-item">
+                    <img src="https://picsum.photos/400/400?random=6" alt="WEIRDSOCKS Photo 6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================== -->
+    <!-- ABOUT SECTION - Bio         -->
+    <!-- Inspirado en depresionsonora.com -->
+    <!-- =========================== -->
+    <section class="about-section" id="about">
+        <div class="section-container">
+            <h2 class="section-title">SOBRE NOSOTROS</h2>
+            
+            <div class="bio-content">
+                <p class="bio-text">
+                    WEIRDSOCKS es una banda indie formada en Cangas, Galicia. 
+                    Nuestra música explora los límites entre lo onírico y lo cotidiano, 
+                    creando paisajes sonoros que invitan a la introspección.
+                </p>
+                <p class="bio-text">
+                    Cada canción es un calcetín perdido en la lavadora del tiempo, 
+                    esperando ser encontrado por quienes se atrevan a buscar.
+                </p>
+                <!-- Easter egg hint -->
+                <p class="bio-hint">
+                    <small>Los calcetines perdidos duermen en el armario...</small>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================== -->
+    <!-- CONTACT SECTION - Form      -->
+    <!-- =========================== -->
+    <section class="contact-section" id="contact">
+        <div class="section-container">
+            <h2 class="section-title">CONTACTO</h2>
+            
+            <div class="contact-content">
+                <!-- Formulario de contacto -->
+                <form class="contact-form" id="contactForm">
+                    <input type="text" placeholder="Nombre" class="form-input" required>
+                    <input type="email" placeholder="Email" class="form-input" required>
+                    <textarea placeholder="Mensaje" class="form-textarea" rows="5" required></textarea>
+                    <button type="submit" class="submit-btn">Enviar</button>
+                </form>
+                
+                <!-- Redes sociales -->
+                <div class="social-links">
+                    <a href="https://instagram.com/weirdsocks" target="_blank" class="social-link">Instagram</a>
+                    <a href="https://spotify.com" target="_blank" class="social-link">Spotify</a>
+                    <a href="https://bandcamp.com" target="_blank" class="social-link">Bandcamp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================== -->
+    <!-- FOOTER - Simple y limpio    -->
+    <!-- =========================== -->
+    <footer class="main-footer">
+        <p>&copy; 2025 WEIRDSOCKS. Todos los calcetines perdidos reservados.</p>
+    </footer>
+
+    <!-- JavaScript -->
     <script src="js/main.js"></script>
 </body>
 </html>

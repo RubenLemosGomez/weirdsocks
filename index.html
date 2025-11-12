@@ -3,251 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="WEIRDSOCKS - Banda indie de Cangas. Escucha nuestra música, descubre lore oculto y encuentra easter eggs.">
-    <title>WEIRDSOCKS</title>
-    
-    <!-- Google Fonts Y2K -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&family=Space+Mono:wght@400;700&family=Orbitron:wght@900&display=swap" rel="stylesheet">
-    
-    <!-- CSS externo -->
+    <title>weirdsocks - Home</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧦</text></svg>">
 </head>
 <body>
-
-    <!-- =========================== -->
-    <!-- HERO SECTION - Full screen  -->
-    <!-- Inspirado en myantiaircraftfriend.com + nettspend.io -->
-    <!-- =========================== -->
-    <section class="hero-section" id="home">
-        <div class="hero-content">
-            <!-- Título enorme tipo nettspend.io -->
-            <h1 class="hero-title">WEIRDSOCKS</h1>
-            <p class="hero-subtitle">BANDA INDIE · CANGAS</p>
-            
-            <!-- Indicador de scroll -->
-            <div class="scroll-indicator">
-                <span>↓</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- =========================== -->
-    <!-- NAVIGATION - Sticky menu    -->
-    <!-- Inspirado en after.band + depresionsonora.com -->
-    <!-- =========================== -->
-    <nav class="main-nav" id="mainNav">
+    <!-- Fondo animado -->
+    <div class="bg-pattern"></div>
+    <div class="glitch-overlay"></div>
+    
+    <!-- Navegación -->
+    <nav class="main-nav">
         <div class="nav-container">
-            <a href="#home" class="nav-logo">WEIRDSOCKS</a>
-            <ul class="nav-menu">
-                <li><a href="#music" class="nav-link">música</a></li>
-                <li><a href="#tour" class="nav-link">tour</a></li>
-                <li><a href="#gallery" class="nav-link">galería</a></li>
-                <li><a href="#about" class="nav-link">bio</a></li>
-                <li><a href="#contact" class="nav-link">contacto</a></li>
-                <!-- Easter egg: link oculto -->
-                <li><a href="archivo-x.html" class="nav-link hidden-link">???</a></li>
+            <div class="logo">
+                <h1 class="glitch" data-text="weirdsocks">weirdsocks</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">home</a></li>
+                <li><a href="tour.html">conciertos</a></li>
+                <li><a href="music.html">music</a></li>
+                <li><a href="gallery.html">gallery</a></li>
+                <li><a href="contact.html">contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- =========================== -->
-    <!-- MUSIC SECTION - Player      -->
-    <!-- Inspirado en after.band -->
-    <!-- =========================== -->
-    <section class="music-section" id="music">
-        <div class="section-container">
-            <h2 class="section-title">ESCUCHA</h2>
-            
-            <!-- Player de música (Spotify/Bandcamp embed) -->
-            <div class="music-player">
-                <!-- Reemplaza con tu embed real de Spotify/Bandcamp -->
-                <iframe 
-                    style="border-radius:12px" 
-                    src="https://open.spotify.com/embed/track/3n3Ppam7vgaVa1iaRUc9Lp?utm_source=generator" 
-                    width="100%" 
-                    height="380" 
-                    frameBorder="0" 
-                    allowfullscreen="" 
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                    loading="lazy">
-                </iframe>
-            </div>
-            
-            <!-- Álbum destacado estilo myantiaircraftfriend.com -->
-            <div class="album-promo">
-                <div class="album-cover">
-                    <img src="images/album-cover.jpg" alt="Debut Album">
-                </div>
-                <div class="album-info">
-                    <h3 class="album-title">Debut Album</h3>
-                    <p class="album-release">Disponible ahora</p>
-                    <div class="album-links">
-                        <a href="#" class="album-btn">Spotify</a>
-                        <a href="#" class="album-btn">Bandcamp</a>
-                        <a href="#" class="album-btn">Apple Music</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- =========================== -->
-    <!-- TOUR SECTION - Dates        -->
-    <!-- Inspirado en nettspend.io + after.band -->
-    <!-- =========================== -->
-    <section class="tour-section" id="tour">
-        <div class="section-container">
-            <h2 class="section-title">PRÓXIMOS SHOWS</h2>
-            
-            <!-- Lista de conciertos -->
-            <div class="tour-list">
+    <!-- Contenido principal -->
+    <main class="container">
+        <section class="hero">
+            <div class="hero-content">
+                <h2 class="neon-text">weirdsocks es una banda</h2>
+                <p class="tagline">indie | alternative | experimental</p>
                 
-                <!-- Concierto 1 -->
-                <div class="tour-item">
-                    <div class="tour-date">
-                        <span class="date-day">15</span>
-                        <span class="date-month">DIC</span>
+                <!-- Reproductor destacado -->
+                <div class="featured-player">
+                    <h3>gózatelo</h3>
+                    <div class="player-box">
+                        <iframe style="border-radius:12px" 
+                                src="https://open.spotify.com/embed/artist/4yVsUDqjjjDhYSz3pQttde?utm_source=generator&theme=0" 
+                                width="100%" 
+                                height="352" 
+                                frameBorder="0" 
+                                allowfullscreen="" 
+                                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                                loading="lazy">
+                        </iframe>
                     </div>
-                    <div class="tour-info">
-                        <h3 class="tour-city">Vigo, España</h3>
-                        <p class="tour-venue">Sala Capitol</p>
-                    </div>
-                    <div class="tour-status">
-                        <span class="status-badge available">tickets</span>
-                    </div>
-                    <a href="#" class="tour-link">Ver más</a>
                 </div>
 
-                <!-- Concierto 2 -->
-                <div class="tour-item">
-                    <div class="tour-date">
-                        <span class="date-day">20</span>
-                        <span class="date-month">DIC</span>
+                <!-- Próximos shows -->
+                <div class="next-shows">
+                    <h3>Proximos conciertos</h3>
+                    <div class="show-list">
+                        <div class="show-item">
+                            <span class="date">12/15</span>
+                            <span class="location">Madrid, ES</span>
+                            <a href="tour.html" class="btn-tickets">tickets</a>
+                        </div>
+                        <div class="show-item">
+                            <span class="date">12/20</span>
+                            <span class="location">Barcelona, ES</span>
+                            <a href="tour.html" class="btn-tickets">tickets</a>
+                        </div>
+                        <div class="show-item">
+                            <span class="date">12/28</span>
+                            <span class="location">Vigo, ES</span>
+                            <a href="tour.html" class="btn-tickets">tickets</a>
+                        </div>
                     </div>
-                    <div class="tour-info">
-                        <h3 class="tour-city">Santiago, España</h3>
-                        <p class="tour-venue">Sala Mardi Gras</p>
-                    </div>
-                    <div class="tour-status">
-                        <span class="status-badge low">low tickets</span>
-                    </div>
-                    <a href="#" class="tour-link">Ver más</a>
+                    <a href="tour.html" class="view-all">View All Dates →</a>
                 </div>
 
-                <!-- Concierto 3 -->
-                <div class="tour-item">
-                    <div class="tour-date">
-                        <span class="date-day">28</span>
-                        <span class="date-month">DIC</span>
-                    </div>
-                    <div class="tour-info">
-                        <h3 class="tour-city">A Coruña, España</h3>
-                        <p class="tour-venue">Mardi Gras</p>
-                    </div>
-                    <div class="tour-status">
-                        <span class="status-badge sold">sold out</span>
-                    </div>
-                    <a href="#" class="tour-link disabled">Agotado</a>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- =========================== -->
-    <!-- GALLERY SECTION - Grid      -->
-    <!-- Inspirado en julianachahayed.com -->
-    <!-- =========================== -->
-    <section class="gallery-section" id="gallery">
-        <div class="section-container">
-            <h2 class="section-title">GALERÍA</h2>
-            
-            <!-- Grid de fotos -->
-            <div class="photo-grid">
-                <div class="photo-item">
-                    <img src="https://picsum.photos/400/400?random=1" alt="WEIRDSOCKS Photo 1">
-                </div>
-                <div class="photo-item">
-                    <img src="https://picsum.photos/400/400?random=2" alt="WEIRDSOCKS Photo 2">
-                </div>
-                <div class="photo-item">
-                    <img src="https://picsum.photos/400/400?random=3" alt="WEIRDSOCKS Photo 3">
-                </div>
-                <div class="photo-item">
-                    <img src="https://picsum.photos/400/400?random=4" alt="WEIRDSOCKS Photo 4">
-                </div>
-                <div class="photo-item">
-                    <img src="https://picsum.photos/400/400?random=5" alt="WEIRDSOCKS Photo 5">
-                </div>
-                <div class="photo-item">
-                    <img src="https://picsum.photos/400/400?random=6" alt="WEIRDSOCKS Photo 6">
+                <!-- Contador de visitas MySpace style -->
+                <div class="visitor-counter">
+                    <img src="https://stuff.charm.sh/termenv/v.gif" alt="counter" class="counter-gif">
+                    <span id="visitor-count">69,420</span> visitors since 2024
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- =========================== -->
-    <!-- ABOUT SECTION - Bio         -->
-    <!-- Inspirado en depresionsonora.com -->
-    <!-- =========================== -->
-    <section class="about-section" id="about">
-        <div class="section-container">
-            <h2 class="section-title">SOBRE NOSOTROS</h2>
-            
-            <div class="bio-content">
-                <p class="bio-text">
-                    WEIRDSOCKS es una banda indie formada en Cangas, Galicia. 
-                    Nuestra música explora los límites entre lo onírico y lo cotidiano, 
-                    creando paisajes sonoros que invitan a la introspección.
-                </p>
-                <p class="bio-text">
-                    Cada canción es un calcetín perdido en la lavadora del tiempo, 
-                    esperando ser encontrado por quienes se atrevan a buscar.
-                </p>
-                <!-- Easter egg hint -->
-                <p class="bio-hint">
-                    <small>Los calcetines perdidos duermen en el armario...</small>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- =========================== -->
-    <!-- CONTACT SECTION - Form      -->
-    <!-- =========================== -->
-    <section class="contact-section" id="contact">
-        <div class="section-container">
-            <h2 class="section-title">CONTACTO</h2>
-            
-            <div class="contact-content">
-                <!-- Formulario de contacto -->
-                <form class="contact-form" id="contactForm">
-                    <input type="text" placeholder="Nombre" class="form-input" required>
-                    <input type="email" placeholder="Email" class="form-input" required>
-                    <textarea placeholder="Mensaje" class="form-textarea" rows="5" required></textarea>
-                    <button type="submit" class="submit-btn">Enviar</button>
-                </form>
-                
-                <!-- Redes sociales -->
-                <div class="social-links">
-                    <a href="https://instagram.com/weirdsocks" target="_blank" class="social-link">Instagram</a>
-                    <a href="https://spotify.com" target="_blank" class="social-link">Spotify</a>
-                    <a href="https://bandcamp.com" target="_blank" class="social-link">Bandcamp</a>
+        <!-- Sección Top Friends estilo MySpace -->
+        <section class="top-friends">
+            <h3 class="section-title">Top 8 Friends</h3>
+            <div class="friends-grid">
+                <div class="friend-box">
+                    <div class="friend-img">🎸</div>
+                    <p>The Strokes</p>
+                </div>
+                <div class="friend-box">
+                    <div class="friend-img">🎹</div>
+                    <p>Arctic Monkeys</p>
+                </div>
+                <div class="friend-box">
+                    <div class="friend-img">🥁</div>
+                    <p>Tame Impala</p>
+                </div>
+                <div class="friend-box">
+                    <div class="friend-img">🎤</div>
+                    <p>Mac DeMarco</p>
+                </div>
+                <div class="friend-box">
+                    <div class="friend-img">🎺</div>
+                    <p>King Krule</p>
+                </div>
+                <div class="friend-box">
+                    <div class="friend-img">🎻</div>
+                    <p>MGMT</p>
+                </div>
+                <div class="friend-box">
+                    <div class="friend-img">🎧</div>
+                    <p>Unknown Mortal</p>
+                </div>
+                <div class="friend-box">
+                    <div class="friend-img">🔊</div>
+                    <p>You?</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- =========================== -->
-    <!-- FOOTER - Simple y limpio    -->
-    <!-- =========================== -->
-    <footer class="main-footer">
-        <p>&copy; 2025 WEIRDSOCKS. Todos los calcetines perdidos reservados.</p>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>© 2025 weirdsocks | Nací en Coiro moriré en Coiro</p>
+            <div class="social-links">
+                <a href="https://open.spotify.com/intl-es/artist/4yVsUDqjjjDhYSz3pQttde" target="_blank">Spotify</a>
+                <a href="https://www.instagram.com/weirdsocks/" target="_blank">Instagram</a>
+                <a href="https://bandcamp.com" target="_blank">Bandcamp</a>
+            </div>
+        </div>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- Canvas para efectos MLG -->
+    <canvas id="mlg-canvas"></canvas>
+
     <script src="js/main.js"></script>
 </body>
 </html>

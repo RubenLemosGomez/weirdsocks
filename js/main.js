@@ -206,7 +206,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    console.log('🎸 WEIRDSOCKS web loaded successfully');
+    console.log('WEIRDSOCKS web loaded successfully');
     console.log('Tip: Prueba el Konami Code para descubrir un secreto...');
     
 });
+  

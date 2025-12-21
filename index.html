@@ -2,25 +2,29 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>WEIRDSOCKS · Página oficial</title>
+  <title>WEIRDSOCKS · sitio oficial</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Fuente más humanista / 2000s -->
+  <!-- Sans humanista similar a Frutiger -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Trebuchet+MS:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="bg-pattern"></div>
-  <div class="glitch-overlay"></div>
+  <div class="bg-aero"></div>
+  <div class="bg-bubbles"></div>
 
   <!-- NAV -->
   <nav class="main-nav" id="mainNav">
     <div class="nav-container">
       <div class="logo">
-        <h1 class="glitch">weirdsocks</h1>
+        <span class="logo-pill">ws</span>
+        <div>
+          <h1>weirdsocks</h1>
+          <p>indie · alternative · experimental</p>
+        </div>
       </div>
       <ul class="nav-links">
         <li><a href="index.html" class="nav-link active">home</a></li>
@@ -32,142 +36,128 @@
     </div>
   </nav>
 
-  <!-- CONTENIDO -->
+  <!-- MAIN -->
   <main class="container">
+    <!-- HERO + PLAYER CABEZA -->
     <section class="hero">
-      <div class="hero-content">
-        <h2 class="page-title neon-text">weirdsocks es una banda</h2>
-        <p class="tagline">indie · alternative · experimental · desde otra pestaña de tu navegador de 2007</p>
-
-        <!-- PLAYER FRUTIGER AERO / CABEZA 2000s -->
-        <section class="time-machine-player">
-          <div class="player-shell">
-            <div class="player-window">
-              <!-- Puedes cambiar esta imagen por una del disco o del logo -->
-              <img
-                src="https://i.scdn.co/image/ab6761610000e5eb000000000000000000000000"
-                alt="WEIRDSOCKS cover"
-                class="player-cover">
+      <div class="hero-layout">
+        <!-- Player cabeza -->
+        <div class="head-player">
+          <div class="head-shell">
+            <div class="head-screen">
+              <!-- pon aquí un cover tuyo -->
+              <img src="https://i.scdn.co/image/ab6761610000e5eb000000000000000000000000"
+                   alt="WEIRDSOCKS cover" class="head-cover">
             </div>
 
-            <div class="player-speakers left">
-              <span class="speaker-dot"></span>
-              <span class="speaker-dot"></span>
-              <span class="speaker-dot"></span>
+            <div class="head-speaker head-speaker-left">
+              <span></span><span></span><span></span>
             </div>
-            <div class="player-speakers right">
-              <span class="speaker-dot"></span>
-              <span class="speaker-dot"></span>
-              <span class="speaker-dot"></span>
+            <div class="head-speaker head-speaker-right">
+              <span></span><span></span><span></span>
             </div>
 
-            <div class="player-controls">
-              <div class="window-buttons">
-                <button class="btn-round btn-min" aria-label="minimizar"></button>
-                <button class="btn-round btn-max" aria-label="maximizar"></button>
-                <button class="btn-round btn-close" aria-label="cerrar"></button>
+            <div class="head-controls">
+              <div class="head-window-buttons">
+                <button aria-label="minimizar"></button>
+                <button aria-label="maximizar"></button>
+                <button aria-label="cerrar"></button>
               </div>
 
-              <div class="transport">
-                <button id="ws-prev" class="ctrl ctrl-prev" type="button">⏮</button>
-                <button id="ws-play" class="ctrl ctrl-play" type="button">▶</button>
-                <button id="ws-next" class="ctrl ctrl-next" type="button">⏭</button>
+              <div class="head-transport">
+                <button id="ws-prev" class="ctrl">⏮</button>
+                <button id="ws-play" class="ctrl ctrl-main">▶</button>
+                <button id="ws-next" class="ctrl">⏭</button>
               </div>
 
-              <div class="player-bar">
-                <span id="ws-time-current">00:00</span>
-                <div class="bar-track">
-                  <div id="ws-progress" class="bar-fill"></div>
+              <div class="head-progress">
+                <span id="ws-time-current">0:00</span>
+                <div class="head-bar">
+                  <div id="ws-progress"></div>
                 </div>
-                <span id="ws-time-total">00:00</span>
+                <span id="ws-time-total">0:00</span>
               </div>
             </div>
           </div>
 
-          <div class="player-meta">
-            <p class="track-title">sonando: <span id="ws-title">cargando...</span></p>
-            <p class="track-sub">bienvenid@ a la página oficial de WEIRDSOCKS · como entrar en tu viejo perfil de myspace</p>
+          <div class="head-meta">
+            <p class="head-now">now playing</p>
+            <h2 id="ws-title">weirdsocks – ntp</h2>
+            <p class="head-sub">escúchalo como si estuvieras en un pc de 2005 pero con wifi en 5 GHz</p>
+            <a href="https://open.spotify.com/artist/4yVsUDqjjjDhYSz3pQttde"
+               target="_blank" rel="noopener" class="btn-primary">
+              abrir en spotify
+            </a>
           </div>
-        </section>
+        </div>
 
-        <!-- BIO / VIBES -->
-        <section class="bio-section">
+        <!-- Texto bienvenida -->
+        <div class="hero-copy">
+          <h2>gózatelo</h2>
           <p>
-            weirdsocks es el soundtrack para internet cafés vacíos, foros muertos y pestañas abiertas a las 3 AM.
-            <span class="bio-hint">haz triple click aquí si te acuerdas de messenger.</span>
+            canciones para pestañas olvidadas, carpetas de descargas eternas y noches enteras
+            navegando sin saber dónde vas a acabar.
           </p>
-          <a class="btn-primary" href="https://open.spotify.com/artist/4yVsUDqjjjDhYSz3pQttde" target="_blank" rel="noopener">
-            escuchar en spotify
-          </a>
-        </section>
+          <p class="bio-hint">
+            triple click aquí si alguna vez usaste msn.
+          </p>
+        </div>
+      </div>
+    </section>
 
-        <!-- PRÓXIMOS CONCIERTOS -->
-        <section class="next-shows">
-          <h3>próximos conciertos</h3>
-          <div class="show-list">
-            <div class="show-item">
-              <span class="date">MAR 15</span>
-              <span class="location">Vigo · Sala por anunciar</span>
-              <a href="tour.html" class="btn-tickets">tickets</a>
-            </div>
-            <div class="show-item">
-              <span class="date">ABR 27</span>
-              <span class="location">Madrid · algo pasa en Malasaña</span>
-              <a href="tour.html" class="btn-tickets">tickets</a>
-            </div>
-            <div class="show-item">
-              <span class="date">MAY 10</span>
-              <span class="location">Barcelona · pueblo con wifi</span>
-              <a href="tour.html" class="btn-tickets">tickets</a>
-            </div>
+    <!-- PRÓXIMOS CONCIERTOS -->
+    <section class="panel">
+      <header class="panel-header">
+        <h3>próximos conciertos</h3>
+        <a href="tour.html">ver todas las fechas →</a>
+      </header>
+      <div class="show-list">
+        <article class="show-item">
+          <div>
+            <p class="show-city">Vigo</p>
+            <p class="show-venue">Sala por anunciar</p>
           </div>
-          <a href="tour.html" class="view-all">View All Dates →</a>
-        </section>
+          <p class="show-date">15 · MAR · 2025</p>
+          <a href="tour.html" class="btn-secondary">tickets</a>
+        </article>
 
-        <!-- CONTADOR VISITAS / GIF 2000s -->
-        <section class="visitor-counter">
-          <img src="https://media.tenor.com/HKjB4qFH8uEAAAAi/internet-explorer.gif" alt="old web gif" class="counter-gif">
-          <span>you are visitor # <span id="visitor-count">69,420</span> since 2024</span>
-        </section>
-
-        <!-- TOP 8 FRIENDS -->
-        <section class="top-friends">
-          <h3>top 8 friends</h3>
-          <div class="friends-grid">
-            <div class="friend-box">
-              <div class="friend-img">🎧</div>
-              <p>The Strokes</p>
-            </div>
-            <div class="friend-box">
-              <div class="friend-img">🧊</div>
-              <p>Arctic Monkeys</p>
-            </div>
-            <div class="friend-box">
-              <div class="friend-img">🌈</div>
-              <p>Tame Impala</p>
-            </div>
-            <div class="friend-box">
-              <div class="friend-img">😎</div>
-              <p>Mac DeMarco</p>
-            </div>
-            <div class="friend-box">
-              <div class="friend-img">🌊</div>
-              <p>King Krule</p>
-            </div>
-            <div class="friend-box">
-              <div class="friend-img">👁️</div>
-              <p>MGMT</p>
-            </div>
-            <div class="friend-box">
-              <div class="friend-img">❓</div>
-              <p>Unknown Mortal</p>
-            </div>
-            <div class="friend-box">
-              <div class="friend-img">🫵</div>
-              <p>You?</p>
-            </div>
+        <article class="show-item">
+          <div>
+            <p class="show-city">Madrid</p>
+            <p class="show-venue">barrio con wifi</p>
           </div>
-        </section>
+          <p class="show-date">27 · ABR · 2025</p>
+          <a href="tour.html" class="btn-secondary">tickets</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- TOP 8 FRIENDS -->
+    <section class="panel">
+      <header class="panel-header">
+        <h3>top 8 friends</h3>
+        <span>inspiraciones y colegas imaginarios</span>
+      </header>
+      <div class="friends-grid">
+        <div class="friend-card"><span>The Strokes</span></div>
+        <div class="friend-card"><span>Arctic Monkeys</span></div>
+        <div class="friend-card"><span>Tame Impala</span></div>
+        <div class="friend-card"><span>Mac DeMarco</span></div>
+        <div class="friend-card"><span>King Krule</span></div>
+        <div class="friend-card"><span>MGMT</span></div>
+        <div class="friend-card"><span>Unknown Mortal</span></div>
+        <div class="friend-card friend-you"><span>You?</span></div>
+      </div>
+    </section>
+
+    <!-- VISITAS -->
+    <section class="panel panel-soft">
+      <div class="visitor">
+        <p>69,420 visitantes desde 2024</p>
+        <div class="visitor-pill">
+          <span class="dot-green"></span>
+          <span>online ahora mismo: tú</span>
+        </div>
       </div>
     </section>
   </main>
@@ -175,7 +165,7 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-content">
-      <p>© 2024 WEIRDSOCKS · hecho en internet</p>
+      <p>© 2024 WEIRDSOCKS</p>
       <div class="social-links">
         <a href="https://open.spotify.com/artist/4yVsUDqjjjDhYSz3pQttde" target="_blank" rel="noopener">spotify</a>
         <a href="https://www.instagram.com" target="_blank" rel="noopener">instagram</a>
@@ -183,8 +173,7 @@
       </div>
     </div>
   </footer>
-
-  <canvas id="mlg-canvas"></canvas>
+  
   <script src="main.js"></script>
 </body>
 </html>

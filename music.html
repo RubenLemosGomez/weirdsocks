@@ -1,129 +1,77 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>weirdsocks - Music</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧦</text></svg>">
+  <meta charset="UTF-8">
+  <title>MUSIC - WEIRDSOCKS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="bg-pattern"></div>
-    <div class="glitch-overlay"></div>
-    
-    <nav class="main-nav">
-        <div class="nav-container">
-            <div class="logo">
-                <h1 class="glitch" data-text="weirdsocks">weirdsocks</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">home</a></li>
-                <li><a href="tour.html">conciertos</a></li>
-                <li><a href="music.html" class="active">music</a></li>
-                <li><a href="gallery.html">gallery</a></li>
-                <li><a href="contact.html">contact</a></li>
-            </ul>
-        </div>
+  
+  <!-- Loading Screen -->
+  <div id="loader" class="loader">
+    <img src="assets/images/weirdsocks-logo.png" alt="WEIRDSOCKS" class="loader-image">
+  </div>
+
+  <!-- Background GIF -->
+  <div class="background-gif"></div>
+
+  <!-- Main Content -->
+  <div class="content">
+    <nav class="nav">
+      <a href="index.html">HOME</a>
+      <a href="music.html" class="active">MUSIC</a>
+      <a href="tour.html">TOUR</a>
+      <a href="gallery.html">GALLERY</a>
+      <a href="contact.html">CONTACT</a>
     </nav>
 
-    <main class="container">
-        <section class="music-section">
-            <h2 class="page-title neon-text">Music</h2>
-            <p class="subtitle">caviar para tus oidos</p>
-
-            <!-- Reproductor principal de Spotify -->
-            <div class="spotify-embed">
-                <iframe style="border-radius:12px" 
-                        src="https://open.spotify.com/embed/artist/4yVsUDqjjjDhYSz3pQttde?utm_source=generator&theme=0" 
-                        width="100%" 
-                        height="500" 
-                        frameBorder="0" 
-                        allowfullscreen="" 
-                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                        loading="lazy">
-                </iframe>
-            </div>
-
-            <!-- Discografía -->
-            <div class="discography">
-                <h3 class="section-title">Discografía</h3>
-                
-                <div class="album-grid">
-                    <div class="album-card">
-                        <div class="album-cover">
-                            <div class="placeholder-cover">🎸</div>
-                        </div>
-                        <h4>Dreaming</h4>
-                        <p class="album-year">2024 - EP</p>
-                        <div class="album-links">
-                            <a href="https://open.spotify.com/intl-es/artist/4yVsUDqjjjDhYSz3pQttde" target="_blank">Spotify</a>
-                            <a href="#" target="_blank">Bandcamp</a>
-                        </div>
-                    </div>
-
-                    <div class="album-card">
-                        <div class="album-cover">
-                            <div class="placeholder-cover">🌙</div>
-                        </div>
-                        <h4>Midnight Socks</h4>
-                        <p class="album-year">2024 - Single</p>
-                        <div class="album-links">
-                            <a href="https://open.spotify.com/intl-es/artist/4yVsUDqjjjDhYSz3pQttde" target="_blank">Spotify</a>
-                            <a href="#" target="_blank">Bandcamp</a>
-                        </div>
-                    </div>
-
-                    <div class="album-card">
-                        <div class="album-cover">
-                            <div class="placeholder-cover">✨</div>
-                        </div>
-                        <h4>Weird Tapes Vol. 1</h4>
-                        <p class="album-year">2023 - Mixtape</p>
-                        <div class="album-links">
-                            <a href="https://open.spotify.com/intl-es/artist/4yVsUDqjjjDhYSz3pQttde" target="_blank">Spotify</a>
-                            <a href="#" target="_blank">Bandcamp</a>
-                        </div>
-                    </div>
-
-                    <div class="album-card coming-soon">
-                        <div class="album-cover">
-                            <div class="placeholder-cover">❓</div>
-                        </div>
-                        <h4>??? </h4>
-                        <p class="album-year">2025 - Album</p>
-                        <div class="album-links">
-                            <span class="coming-soon-label">COMING SOON</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Plataformas -->
-            <div class="platforms">
-                <h3>Listen everywhere</h3>
-                <div class="platform-links">
-                    <a href="https://open.spotify.com/intl-es/artist/4yVsUDqjjjDhYSz3pQttde" target="_blank" class="platform-btn">Spotify</a>
-                    <a href="#" target="_blank" class="platform-btn">Apple Music</a>
-                    <a href="#" target="_blank" class="platform-btn">Bandcamp</a>
-                    <a href="#" target="_blank" class="platform-btn">SoundCloud</a>
-                    <a href="#" target="_blank" class="platform-btn">YouTube</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <p>© 2025 weirdsocks | Nací en Coiro moriré en coiro</p>
-            <div class="social-links">
-                <a href="https://open.spotify.com/intl-es/artist/4yVsUDqjjjDhYSz3pQttde" target="_blank">Spotify</a>
-                <a href="https://www.instagram.com/weirdsocks/" target="_blank">Instagram</a>
-                <a href="https://bandcamp.com" target="_blank">Bandcamp</a>
-            </div>
+    <div class="page-content">
+      <h1 class="page-title">MUSIC</h1>
+      
+      <div class="music-list">
+        <div class="music-item">
+          <div class="music-cover" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+          <div class="music-info">
+            <h3>NTP</h3>
+            <p>2025 • SINGLE</p>
+          </div>
+          <div class="music-links">
+            <a href="https://open.spotify.com/album/1CXRTJU426JeHSaMLpkJIy" target="_blank">SPOTIFY</a>
+            <a href="#" target="_blank">APPLE MUSIC</a>
+            <a href="#" target="_blank">YOUTUBE</a>
+          </div>
         </div>
-    </footer>
 
-    <canvas id="mlg-canvas"></canvas>
-    <script src="js/main.js"></script>
+        <div class="music-item">
+          <div class="music-cover" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+          <div class="music-info">
+            <h3>O/S/C/I/L/A/N/D/O</h3>
+            <p>2025 • SINGLE</p>
+          </div>
+          <div class="music-links">
+            <a href="https://open.spotify.com/album/1lE1MuKGH5WT2yiUfRIyL0" target="_blank">SPOTIFY</a>
+            <a href="#" target="_blank">APPLE MUSIC</a>
+            <a href="#" target="_blank">YOUTUBE</a>
+          </div>
+        </div>
+
+        <div class="music-item">
+          <div class="music-cover" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+          <div class="music-info">
+            <h3>NO PARA MÍ</h3>
+            <p>2024 • SINGLE</p>
+          </div>
+          <div class="music-links">
+            <a href="https://open.spotify.com/album/4fIR5x2ySafalxrXrOeeq2" target="_blank">SPOTIFY</a>
+            <a href="#" target="_blank">APPLE MUSIC</a>
+            <a href="#" target="_blank">YOUTUBE</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
 </body>
 </html>

@@ -4,98 +4,55 @@
   <meta charset="UTF-8">
   <title>WEIRDSOCKS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   
-  <nav class="main-nav" id="mainNav">
-    <div class="nav-container">
-      <h1 class="logo">weirdsocks</h1>
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">home</a></li>
-        <li><a href="music.html">music</a></li>
-        <li><a href="tour.html">tour</a></li>
-        <li><a href="gallery.html">gallery</a></li>
-        <li><a href="contact.html">contact</a></li>
-      </ul>
+  <!-- Loading Screen -->
+  <div class="loader-container" id="loader">
+    <div class="loader-content">
+      <img src="https://i.scdn.co/image/ab676161000051744dc5e9304ed464d23e6058aa" alt="WEIRDSOCKS" class="loader-image">
+      <div class="loader-text">LOADING...</div>
     </div>
-  </nav>
+  </div>
 
-  <main class="container">
+  <!-- Background GIF -->
+  <div class="background-gif"></div>
+
+  <!-- Main Content -->
+  <div class="main-wrapper" id="mainContent">
     
-    <section class="hero">
-      <div class="player-card">
-        <div class="player-visual">
-          <img src="https://i.scdn.co/image/ab6761610000e5eb000000000000000000000000" alt="WEIRDSOCKS">
-        </div>
-        <div class="player-info">
-          <p class="tag">now playing</p>
-          <h2 id="track-title">ntp</h2>
-          <p class="artist">weirdsocks</p>
-          
-          <div class="player-controls">
-            <button id="prev-btn" class="ctrl-btn">⏮</button>
-            <button id="play-btn" class="ctrl-btn play-btn">▶</button>
-            <button id="next-btn" class="ctrl-btn">⏭</button>
-          </div>
+    <!-- Center Navigation Links -->
+    <div class="center-nav">
+      <a href="https://open.spotify.com/intl-es/artist/4yVsUDqjjjDhYSz3pQttde" target="_blank" class="nav-item" data-text="LISTEN">LISTEN</a>
+      <a href="tour.html" class="nav-item" data-text="TOUR">TOUR</a>
+      <a href="https://weirdsocks.bandcamp.com/" target="_blank" class="nav-item" data-text="SHOP">SHOP</a>
+    </div>
 
-          <div class="progress-bar">
-            <span id="current-time">0:00</span>
-            <div class="bar">
-              <div id="progress" class="bar-fill"></div>
-            </div>
-            <span id="total-time">0:00</span>
-          </div>
+  </div>
 
-          <a href="https://open.spotify.com/artist/4yVsUDqjjjDhYSz3pQttde" 
-             target="_blank" rel="noopener" class="btn-primary">
-            open on spotify
-          </a>
-        </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
+        <p class="footer-brand">WEIRDSOCKS</p>
       </div>
-
-      <div class="bio">
-        <p>indie · alternative · experimental desde internet, 2024.</p>
-        <p>canciones para pestañas olvidadas y carpetas llenas de demos sin nombre.</p>
-      </div>
-    </section>
-
-    <section class="shows-section">
-      <h3>upcoming shows</h3>
-      <div class="shows-list">
-        <div class="show-item">
-          <div class="show-info">
-            <p class="show-city">Vigo</p>
-            <p class="show-venue">Sala TBA</p>
-          </div>
-          <p class="show-date">15/03</p>
-          <a href="tour.html" class="btn-link">tickets</a>
-        </div>
-        <div class="show-item">
-          <div class="show-info">
-            <p class="show-city">Madrid</p>
-            <p class="show-venue">TBA</p>
-          </div>
-          <p class="show-date">27/04</p>
-          <a href="tour.html" class="btn-link">tickets</a>
-        </div>
-      </div>
-      <a href="tour.html" class="view-all">view all dates →</a>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="footer-content">
-      <p>© 2024 weirdsocks</p>
       <div class="social-links">
-        <a href="https://open.spotify.com/artist/4yVsUDqjjjDhYSz3pQttde" target="_blank" rel="noopener">spotify</a>
-        <a href="#" target="_blank" rel="noopener">instagram</a>
-        <a href="#" target="_blank" rel="noopener">youtube</a>
+        <h4>FOLLOW</h4>
+        <a href="https://open.spotify.com/artist/4yVsUDqjjjDhYSz3pQttde" target="_blank" rel="noopener">SPOTIFY</a>
+        <a href="https://instagram.com/weirdsocks" target="_blank" rel="noopener">INSTAGRAM</a>
+        <a href="https://youtube.com" target="_blank" rel="noopener">YOUTUBE</a>
       </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 WEIRDSOCKS. ALL RIGHTS RESERVED.</p>
     </div>
   </footer>
 
-  <script src="main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

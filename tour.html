@@ -1,144 +1,111 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>weirdsocks - Tour</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧦</text></svg>">
+  <meta charset="UTF-8">
+  <title>TOUR - WEIRDSOCKS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="bg-pattern"></div>
-    <div class="glitch-overlay"></div>
-    
-    <nav class="main-nav">
-        <div class="nav-container">
-            <div class="logo">
-                <h1 class="glitch" data-text="weirdsocks">weirdsocks</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">home</a></li>
-                <li><a href="tour.html" class="active">tour</a></li>
-                <li><a href="music.html">music</a></li>
-                <li><a href="merch.html">merch</a></li>
-                <li><a href="gallery.html">gallery</a></li>
-                <li><a href="contact.html">contact</a></li>
-            </ul>
-        </div>
+  
+  <!-- Loading Screen -->
+  <div id="loader" class="loader">
+    <img src="assets/images/weirdsocks-logo.png" alt="WEIRDSOCKS" class="loader-image">
+  </div>
+
+  <!-- Background GIF -->
+  <div class="background-gif"></div>
+
+  <!-- Main Content -->
+  <div class="content">
+    <nav class="nav">
+      <a href="index.html">HOME</a>
+      <a href="music.html">MUSIC</a>
+      <a href="tour.html" class="active">TOUR</a>
+      <a href="gallery.html">GALLERY</a>
+      <a href="contact.html">CONTACT</a>
     </nav>
 
-    <main class="container">
-        <section class="tour-section">
-            <h2 class="page-title neon-text">Tour Dates</h2>
-            <p class="subtitle">catch us if you can 🎸</p>
-
-            <div class="tour-dates">
-                <div class="tour-date-item">
-                    <div class="date-info">
-                        <span class="month">DEC</span>
-                        <span class="day">15</span>
-                    </div>
-                    <div class="venue-info">
-                        <h3>Sala Mon Live</h3>
-                        <p>Madrid, ES</p>
-                    </div>
-                    <div class="ticket-btn">
-                        <a href="#" class="btn-primary">tickets</a>
-                    </div>
-                </div>
-
-                <div class="tour-date-item">
-                    <div class="date-info">
-                        <span class="month">DEC</span>
-                        <span class="day">20</span>
-                    </div>
-                    <div class="venue-info">
-                        <h3>Razzmatazz</h3>
-                        <p>Barcelona, ES</p>
-                    </div>
-                    <div class="ticket-btn">
-                        <a href="#" class="btn-primary">tickets</a>
-                    </div>
-                </div>
-
-                <div class="tour-date-item">
-                    <div class="date-info">
-                        <span class="month">DEC</span>
-                        <span class="day">28</span>
-                    </div>
-                    <div class="venue-info">
-                        <h3>Radar Estudios</h3>
-                        <p>Vigo, ES</p>
-                    </div>
-                    <div class="ticket-btn">
-                        <a href="#" class="btn-primary">tickets</a>
-                    </div>
-                </div>
-
-                <div class="tour-date-item">
-                    <div class="date-info">
-                        <span class="month">JAN</span>
-                        <span class="day">10</span>
-                    </div>
-                    <div class="venue-info">
-                        <h3>Indie Club</h3>
-                        <p>Valencia, ES</p>
-                    </div>
-                    <div class="ticket-btn">
-                        <a href="#" class="btn-primary">tickets</a>
-                    </div>
-                </div>
-
-                <div class="tour-date-item">
-                    <div class="date-info">
-                        <span class="month">JAN</span>
-                        <span class="day">15</span>
-                    </div>
-                    <div class="venue-info">
-                        <h3>Kafe Antzokia</h3>
-                        <p>Bilbao, ES</p>
-                    </div>
-                    <div class="ticket-btn">
-                        <a href="#" class="btn-primary">tickets</a>
-                    </div>
-                </div>
-
-                <div class="tour-date-item sold-out">
-                    <div class="date-info">
-                        <span class="month">JAN</span>
-                        <span class="day">22</span>
-                    </div>
-                    <div class="venue-info">
-                        <h3>Loco Club</h3>
-                        <p>Sevilla, ES</p>
-                    </div>
-                    <div class="ticket-btn">
-                        <span class="sold-out-label">SOLD OUT</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="booking-info">
-                <h3>Para cualquier reserva</h3>
-                <p>Email us at: <a href="weirdsocks04@gmail.com">weirdsocks04@gmail.com</a></p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-          <footer>
-        <div class="footer-content">
-            <p>© 2025 weirdsocks | Nací en Coiro moriré en coiro</p>
-            <div class="social-links">
-                <a href="https://open.spotify.com/intl-es/artist/4yVsUDqjjjDhYSz3pQttde" target="_blank">Spotify</a>
-                <a href="https://www.instagram.com/weirdsocks/" target="_blank">Instagram</a>
-                <a href="https://bandcamp.com" target="_blank">Bandcamp</a>
-            </div>
-            </div>
+    <div class="page-content">
+      <h1 class="page-title">TOUR</h1>
+      
+      <div class="tour-list">
+        <div class="tour-item">
+          <div class="tour-date">
+            <span class="date-day">15</span>
+            <span class="date-month">MAR</span>
+          </div>
+          <div class="tour-details">
+            <h3>VIGO, ES</h3>
+            <p>Sala TBA</p>
+          </div>
+          <a href="#" class="tour-btn">TICKETS</a>
         </div>
-    </footer>
 
-    <canvas id="mlg-canvas"></canvas>
-    <script src="js/main.js"></script>
+        <div class="tour-item">
+          <div class="tour-date">
+            <span class="date-day">27</span>
+            <span class="date-month">ABR</span>
+          </div>
+          <div class="tour-details">
+            <h3>MADRID, ES</h3>
+            <p>TBA</p>
+          </div>
+          <a href="#" class="tour-btn">TICKETS</a>
+        </div>
+
+        <div class="tour-item">
+          <div class="tour-date">
+            <span class="date-day">18</span>
+            <span class="date-month">MAY</span>
+          </div>
+          <div class="tour-details">
+            <h3>BARCELONA, ES</h3>
+            <p>Sala Apolo</p>
+          </div>
+          <a href="#" class="tour-btn">TICKETS</a>
+        </div>
+
+        <div class="tour-item">
+          <div class="tour-date">
+            <span class="date-day">05</span>
+            <span class="date-month">JUN</span>
+          </div>
+          <div class="tour-details">
+            <h3>VALENCIA, ES</h3>
+            <p>16 Toneladas</p>
+          </div>
+          <a href="#" class="tour-btn">TICKETS</a>
+        </div>
+
+        <div class="tour-item">
+          <div class="tour-date">
+            <span class="date-day">20</span>
+            <span class="date-month">JUN</span>
+          </div>
+          <div class="tour-details">
+            <h3>BILBAO, ES</h3>
+            <p>Sala Kafe Antzokia</p>
+          </div>
+          <a href="#" class="tour-btn">TICKETS</a>
+        </div>
+
+        <div class="tour-item">
+          <div class="tour-date">
+            <span class="date-day">12</span>
+            <span class="date-month">JUL</span>
+          </div>
+          <div class="tour-details">
+          <h4 class="show-city">SEVILLA, ES</h4>
+            <h3>SEVILLA, ES</h3>
+            <p>Sala X</p>
+          </div>
+          <a href="#" class="tour-btn">TICKETS</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
 </body>
 </html>

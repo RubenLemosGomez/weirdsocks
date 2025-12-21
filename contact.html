@@ -1,110 +1,63 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>weirdsocks - Contact</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧦</text></svg>">
+  <meta charset="UTF-8">
+  <title>CONTACT - WEIRDSOCKS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="bg-pattern"></div>
-    <div class="glitch-overlay"></div>
-    
-    <nav class="main-nav">
-        <div class="nav-container">
-            <div class="logo">
-                <h1 class="glitch" data-text="weirdsocks">weirdsocks</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">home</a></li>
-                <li><a href="tour.html">tour</a></li>
-                <li><a href="music.html">music</a></li>
-                <li><a href="gallery.html">gallery</a></li>
-                <li><a href="contact.html" class="active">contact</a></li>
-            </ul>
-        </div>
+  
+  <!-- Loading Screen -->
+  <div id="loader" class="loader">
+    <img src="assets/images/weirdsocks-logo.png" alt="WEIRDSOCKS" class="loader-image">
+  </div>
+
+  <!-- Background GIF -->
+  <div class="background-gif"></div>
+
+  <!-- Main Content -->
+  <div class="content">
+    <nav class="nav">
+      <a href="index.html">HOME</a>
+      <a href="music.html">MUSIC</a>
+      <a href="tour.html">TOUR</a>
+      <a href="gallery.html">GALLERY</a>
+      <a href="contact.html" class="active">CONTACT</a>
     </nav>
 
-    <main class="container">
-        <section class="contact-section">
-            <h2 class="page-title neon-text">Sintoniza con nosotros</h2>
-            <p class="subtitle">mándanos un telegrama</p>
-
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h3>Email</h3>
-                    <p><a href="weirdsocks04@gmail.com">weirdsocks04@gmail.com</a></p>
-                    
-                    
-                    <h3>Social Media</h3>
-                    <div class="social-list">
-                        <a href="https://www.instagram.com/weirdsocks/" target="_blank">Instagram →</a>
-                        <a href="https://twitter.com" target="_blank">Twitter/X →</a>
-                        <a href="https://tiktok.com" target="_blank">TikTok →</a>
-                        <a href="https://facebook.com" target="_blank">Facebook →</a>
-                    </div>
-
-                    <h3>🎵 Music Platforms</h3>
-                    <div class="social-list">
-                        <a href="https://open.spotify.com/intl-es/artist/4yVsUDqjjjDhYSz3pQttde" target="_blank">Spotify →</a>
-                        <a href="#" target="_blank">Apple Music →</a>
-                        <a href="#" target="_blank">Bandcamp →</a>
-                        <a href="#" target="_blank">SoundCloud →</a>
-                        <a href="#" target="_blank">YouTube →</a>
-                    </div>
-                </div>
-
-                <div class="contact-form">
-                    <h3>Send us a message</h3>
-                    <form action="#" method="POST">
-                        <div class="form-group">
-                            <input type="text" name="name" placeholder="Tu nombre" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" placeholder="Tu correo" required>
-                        </div>
-                        <div class="form-group">
-                            <select name="subject" required>
-                                <option value="">Motivo</option>
-                                <option value="booking">Reserva</option>
-                                <option value="press">Press</option>
-                                <option value="collaboration">Colaboración</option>
-                                <option value="fan">Fan Message</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <textarea name="message" placeholder="Tu prosa" rows="6" required></textarea>
-                        </div>
-                        <button type="submit" class="btn-primary">Enviar el mensaje</button>
-                    </form>
-                </div>
-            </div>
-
-            <div class="newsletter">
-                <h3>Newsletter</h3>
-                <p>Get exclusive updates, early access to tickets, and secret shows</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="your@email.com" required>
-                    <button type="submit" class="btn-primary">Subscribe</button>
-                </form>
-            </div>
-        </section>
-    </main>
-
-      <footer>
-        <div class="footer-content">
-            <p>© 2025 weirdsocks | Nací en Coiro moriré en coiro</p>
-            <div class="social-links">
-                <a href="https://open.spotify.com/intl-es/artist/4yVsUDqjjjDhYSz3pQttde" target="_blank">Spotify</a>
-                <a href="https://www.instagram.com/weirdsocks/" target="_blank">Instagram</a>
-                <a href="https://bandcamp.com" target="_blank">Bandcamp</a>
-            </div>
+    <div class="page-content">
+      <h1 class="page-title">CONTACT</h1>
+      
+      <div class="contact-grid">
+        <div class="contact-item">
+          <h3>BOOKINGS</h3>
+          <p>Para conciertos y eventos</p>
+          <a href="mailto:bookings@weirdsocks.com">bookings@weirdsocks.com</a>
         </div>
-    </footer>
 
-    <canvas id="mlg-canvas"></canvas>
-    <script src="js/main.js"></script>
+        <div class="contact-item">
+          <h3>PRESS & MEDIA</h3>
+          <p>Entrevistas y colaboraciones</p>
+          <a href="mailto:press@weirdsocks.com">press@weirdsocks.com</a>
+        </div>
+
+        <div class="contact-item">
+          <h3>GENERAL</h3>
+          <p>Cualquier otra cosa</p>
+          <a href="mailto:info@weirdsocks.com">info@weirdsocks.com</a>
+        </div>
+      </div>
+
+      <div class="social-links-contact">
+        <a href="https://open.spotify.com/artist/4yVsUDqjjjDhYSz3pQttde" target="_blank">SPOTIFY</a>
+        <a href="https://instagram.com/weirdsocks" target="_blank">INSTAGRAM</a>
+        <a href="#" target="_blank">YOUTUBE</a>
+        <a href="#" target="_blank">TWITTER</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
 </body>
 </html>

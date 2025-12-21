@@ -18,7 +18,7 @@ html, body {
 }
 
 body {
-  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
   background: #000;
   color: #fff;
   position: relative;
@@ -72,7 +72,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('https://media1.tenor.com/m/pvKm-kTn17gAAAAC/alien-connection.gif');
+  background-image: url('../assets/images/website_background.gif');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+  
+  // Scroll nav
   const nav = document.getElementById('mainNav');
   let lastScroll = 0;
 
@@ -12,50 +14,35 @@ document.addEventListener('DOMContentLoaded', () => {
     lastScroll = current;
   });
 
-  const bioHint = document.querySelector('.bio-hint');
-  if (bioHint) {
-    let clicks = 0;
-    bioHint.addEventListener('click', () => {
-      clicks++;
-      if (clicks === 3) {
-        bioHint.textContent = 'los calcetines perdidos estaban en tu carpeta “descargas”.';
-        clicks = 0;
-      }
-    });
-  }
-
-  // === MINI PLAYER SIMPLE (usa tus propios audios) ===
+  // Mini player
   const tracks = [
-    {
-      title: 'weirdsocks – ntp',
-      url: 'audio/ntp.mp3'   // cambia a la ruta real de tu mp3
-    }
+    { title: 'ntp', url: 'audio/ntp.mp3' }
   ];
 
   let index = 0;
   let playing = false;
   const audio = new Audio(tracks[0].url);
 
-  const titleEl   = document.getElementById('ws-title');
-  const playBtn   = document.getElementById('ws-play');
-  const prevBtn   = document.getElementById('ws-prev');
-  const nextBtn   = document.getElementById('ws-next');
-  const progEl    = document.getElementById('ws-progress');
-  const curEl     = document.getElementById('ws-time-current');
-  const totalEl   = document.getElementById('ws-time-total');
+  const titleEl = document.getElementById('track-title');
+  const playBtn = document.getElementById('play-btn');
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+  const progressEl = document.getElementById('progress');
+  const currentEl = document.getElementById('current-time');
+  const totalEl = document.getElementById('total-time');
 
-  function format(t) {
-    if (!t || Number.isNaN(t)) return '0:00';
-    const m = Math.floor(t / 60);
-    const s = Math.floor(t % 60).toString().padStart(2, '0');
+  function formatTime(seconds) {
+    if (!seconds || isNaN(seconds)) return '0:00';
+    const m = Math.floor(seconds / 60);
+    const s = Math.floor(seconds % 60).toString().padStart(2, '0');
     return `${m}:${s}`;
   }
 
-  function load(i) {
+  function loadTrack(i) {
     index = (i + tracks.length) % tracks.length;
     audio.src = tracks[index].url;
     if (titleEl) titleEl.textContent = tracks[index].title;
-    if (progEl) progEl.style.width = '0%';
+    if (progressEl) progressEl.style.width = '0%';
   }
 
   if (playBtn) {
@@ -72,27 +59,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  prevBtn && prevBtn.addEventListener('click', () => {
-    load(index - 1);
-    if (playing) audio.play();
-  });
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      loadTrack(index - 1);
+      if (playing) audio.play();
+    });
+  }
 
-  nextBtn && nextBtn.addEventListener('click', () => {
-    load(index + 1);
-    if (playing) audio.play();
-  });
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      loadTrack(index + 1);
+      if (playing) audio.play();
+    });
+  }
 
   audio.addEventListener('timeupdate', () => {
     if (!audio.duration) return;
-    if (progEl) progEl.style.width = `${(audio.currentTime / audio.duration) * 100}%`;
-    if (curEl) curEl.textContent = format(audio.currentTime);
-    if (totalEl) totalEl.textContent = format(audio.duration);
+    if (progressEl) {
+      progressEl.style.width = `${(audio.currentTime / audio.duration) * 100}%`;
+    }
+    if (currentEl) currentEl.textContent = formatTime(audio.currentTime);
+    if (totalEl) totalEl.textContent = formatTime(audio.duration);
   });
 
   audio.addEventListener('ended', () => {
-    load(index + 1);
+    loadTrack(index + 1);
     if (playing) audio.play();
   });
 
-  load(0);
+  loadTrack(0);
 });

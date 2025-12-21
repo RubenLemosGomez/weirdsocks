@@ -99,6 +99,12 @@ body {
   justify-content: center;
   padding: 40px 20px;
   overflow-y: auto;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.content.visible {
+  opacity: 1;
 }
 
 .main-wrapper {

@@ -37,16 +37,16 @@ document.addEventListener('DOMContentLoaded', () => {
       // GALLERY: custom optimization
       if (label === 'GALLERY') {
         item.style.fontSize = '7.8vw';
-        item.style.transform = 'scaleX(2.0)';
-        item.dataset.fitScaleX = '2.0';
+        item.style.transform = 'scaleX(2.15)';
+        item.dataset.fitScaleX = '2.15';
         return;
       }
 
       // CONTACT: custom optimization
       if (label === 'CONTACT') {
         item.style.fontSize = '8.2vw';
-        item.style.transform = 'scaleX(1.9)';
-        item.dataset.fitScaleX = '1.9';
+        item.style.transform = 'scaleX(2.05)';
+        item.dataset.fitScaleX = '2.05';
         return;
       }
 

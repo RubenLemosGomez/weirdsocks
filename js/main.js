@@ -26,12 +26,19 @@ document.addEventListener('DOMContentLoaded', () => {
       '.center-nav .nav-item, .bottom-gallery .nav-item, .nav a'
     );
 
-    const MAX_SCALE_X = 2.0; // allow stretch without blowing up font-size
+    const MAX_SCALE_X = 2.0; // max horizontal distortion (readable)
+    const MAX_FONT_BOOST = 1.45; // per-word size increase to reduce empty margins
     const EDGE_INSET_PX = 16; // safety inset to avoid edge clipping
 
     allNavLinks.forEach(item => {
+      // Remember base font size (from CSS) so we can scale per word predictably
+      if (!item.dataset.baseFontSize) {
+        item.dataset.baseFontSize = window.getComputedStyle(item).fontSize;
+      }
+
       // Reset transform to measure accurately
       item.style.transform = 'none';
+      item.style.fontSize = item.dataset.baseFontSize;
       void item.offsetWidth;
 
       const containerWidth = item.getBoundingClientRect().width;
@@ -68,6 +75,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Desired scale to touch both edges
       let desiredScaleX = targetWidth / textWidth;
+
+      // If the word is very short, it would need too much scaleX.
+      // Instead, increase its font-size (bounded) so it can still
+      // reach the same margins with a readable scaleX.
+      if (desiredScaleX > MAX_SCALE_X) {
+        const baseFontPx = parseFloat(item.dataset.baseFontSize);
+        if (Number.isFinite(baseFontPx) && baseFontPx > 0) {
+          const neededBoost = desiredScaleX / MAX_SCALE_X;
+          const appliedBoost = Math.min(neededBoost, MAX_FONT_BOOST);
+          item.style.fontSize = `${baseFontPx * appliedBoost}px`;
+          void item.offsetWidth;
+          textWidth = measureTextWidth();
+          if (textWidth > 0) desiredScaleX = targetWidth / textWidth;
+        }
+      }
 
       const scaleX = Math.min(desiredScaleX, MAX_SCALE_X);
       item.style.transformOrigin = 'center center';

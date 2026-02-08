@@ -26,18 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
       '.center-nav .nav-item, .bottom-gallery .nav-item, .nav a'
     );
 
-    const MAX_SCALE_X = 2.2; // keep distortion readable (slightly less)
+    const MAX_SCALE_X = 2.0; // allow stretch without blowing up font-size
     const EDGE_INSET_PX = 16; // safety inset to avoid edge clipping
 
     allNavLinks.forEach(item => {
-      // Remember the original font-size so we can adjust predictably
-      if (!item.dataset.baseFontSize) {
-        item.dataset.baseFontSize = window.getComputedStyle(item).fontSize;
-      }
-
       // Reset transform to measure accurately
       item.style.transform = 'none';
-      item.style.fontSize = item.dataset.baseFontSize;
       void item.offsetWidth;
 
       const containerWidth = item.getBoundingClientRect().width;
@@ -75,19 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
       // Desired scale to touch both edges
       let desiredScaleX = targetWidth / textWidth;
 
-      // If distortion would be too extreme, increase font size so we can
-      // still reach the edges while keeping scaleX readable.
-      if (desiredScaleX > MAX_SCALE_X) {
-        const currentFontPx = parseFloat(window.getComputedStyle(item).fontSize);
-        if (Number.isFinite(currentFontPx) && currentFontPx > 0) {
-          const fontBoost = desiredScaleX / MAX_SCALE_X;
-          item.style.fontSize = `${currentFontPx * fontBoost}px`;
-          void item.offsetWidth;
-          textWidth = measureTextWidth();
-          if (textWidth > 0) desiredScaleX = targetWidth / textWidth;
-        }
-      }
-
       const scaleX = Math.min(desiredScaleX, MAX_SCALE_X);
       item.style.transformOrigin = 'center center';
       item.style.transform = `scaleX(${scaleX})`;
@@ -123,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
   allItems.forEach(item => {
     item.addEventListener('mouseenter', () => {
       const sx = Number(item.dataset.fitScaleX || 1);
-      item.style.transform = `scaleX(${sx}) scaleY(1.07)`;
+      item.style.transform = `scaleX(${sx}) scaleY(1.05)`;
     });
     item.addEventListener('mouseleave', () => {
       const sx = Number(item.dataset.fitScaleX || 1);

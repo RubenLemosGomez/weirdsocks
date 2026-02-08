@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // they need more breathing room to avoid being clipped by overflow-x hidden.
     const INSET_NORMAL_PX = 6;
     const INSET_ACTIVE_PX = 22;
+    const INSET_LONG_LABEL_EXTRA_PX = 6; // slightly less width for long labels
 
     allNavLinks.forEach(item => {
       // Remember base font size (from CSS) so we can scale per word predictably
@@ -48,7 +49,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const containerWidth = item.getBoundingClientRect().width;
       if (!(containerWidth > 0)) return;
 
-      const perSideInset = item.classList.contains('active') ? INSET_ACTIVE_PX : INSET_NORMAL_PX;
+      const label = (item.textContent || '').trim().toUpperCase();
+      const isLongLabel = label === 'GALLERY' || label === 'CONTACT';
+
+      let perSideInset = item.classList.contains('active') ? INSET_ACTIVE_PX : INSET_NORMAL_PX;
+      if (isLongLabel) perSideInset += INSET_LONG_LABEL_EXTRA_PX;
       const targetWidth = Math.max(0, containerWidth - (perSideInset * 2));
       if (!(targetWidth > 0)) return;
 

@@ -95,9 +95,9 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 20px;
+  align-items: stretch;
+  justify-content: flex-start;
+  padding: 0;
   overflow-y: auto;
   opacity: 0;
   transition: opacity 0.8s ease;
@@ -241,30 +241,42 @@ body {
 .nav {
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  align-items: center;
+  gap: 0;
+  align-items: stretch;
   justify-content: center;
-  margin-bottom: 60px;
+  margin-bottom: 0;
+  width: 100%;
+  overflow: visible;
 }
 
 .nav a {
-  font-family: 'Bebas Neue', 'Arial Black', sans-serif;
-  font-size: 56px;
-  letter-spacing: 8px;
+  font-family: 'Georgia', 'Times New Roman', 'Garamond', serif;
+  font-size: 9vw;
+  font-weight: 900;
+  letter-spacing: 0;
   text-decoration: none;
   color: #fff;
   text-transform: uppercase;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
   position: relative;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  white-space: nowrap;
+  overflow: visible;
+  line-height: 1.2;
+  padding: 8px 0;
+  transform: scaleX(1);
+  transform-origin: center center;
 }
 
 .nav a:hover,
 .nav a.active {
   color: #ff0000;
   text-shadow: 0 0 30px rgba(255, 0, 0, 0.8);
-  transform: scale(1.05);
-  letter-spacing: 12px;
+  opacity: 0.85;
 }
 
 /* ========= PAGE CONTENT ========= */
@@ -273,7 +285,7 @@ body {
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 40px 20px;
 }
 
 .page-title {
@@ -612,13 +624,13 @@ body {
   }
   
   .nav a {
-    font-size: 42px;
-    letter-spacing: 6px;
+    font-size: 8vw;
+    letter-spacing: 0;
   }
   
   .nav a:hover,
   .nav a.active {
-    letter-spacing: 9px;
+    opacity: 0.85;
   }
   
   .page-title {
@@ -661,13 +673,13 @@ body {
   }
   
   .nav a {
-    font-size: 32px;
-    letter-spacing: 4px;
+    font-size: 7vw;
+    letter-spacing: 0;
   }
   
   .nav a:hover,
   .nav a.active {
-    letter-spacing: 7px;
+    opacity: 0.85;
   }
   
   .page-title {

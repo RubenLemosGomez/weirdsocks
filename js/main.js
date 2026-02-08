@@ -13,13 +13,18 @@ document.addEventListener('DOMContentLoaded', () => {
     fitNavItems();
   }, 2500);
 
-  // Fit each nav-item text to fill its container width
+  // Fit each nav text to fill its container width
   function fitNavItems() {
-    const navItems = document.querySelectorAll('.center-nav .nav-item, .bottom-gallery .nav-item');
-    navItems.forEach(item => {
+    // Select all nav links: index page (.center-nav .nav-item, .bottom-gallery .nav-item)
+    // and inner pages (.nav a)
+    const allNavLinks = document.querySelectorAll(
+      '.center-nav .nav-item, .bottom-gallery .nav-item, .nav a'
+    );
+    allNavLinks.forEach(item => {
       // Reset transform to measure natural width
       item.style.transform = 'scaleX(1) scaleY(1)';
-      const containerWidth = item.parentElement.clientWidth;
+      // Use viewport width as reference to ensure edge-to-edge
+      const containerWidth = document.documentElement.clientWidth;
       const textWidth = item.scrollWidth;
       if (textWidth > 0 && containerWidth > 0) {
         const scaleX = containerWidth / textWidth;
@@ -33,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', fitNavItems);
   
   // Add loading screen transition when clicking navigation links
-  const navLinks = document.querySelectorAll('.nav-item');
+  const navLinks = document.querySelectorAll('.nav-item, .nav a');
   navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
@@ -51,11 +56,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Update hover to keep fit scale
-  const navItems = document.querySelectorAll('.center-nav .nav-item, .bottom-gallery .nav-item');
-  navItems.forEach(item => {
+  const allItems = document.querySelectorAll(
+    '.center-nav .nav-item, .bottom-gallery .nav-item, .nav a'
+  );
+  allItems.forEach(item => {
     item.addEventListener('mouseenter', () => {
       const sx = item.dataset.fitScaleX || 1;
-      item.style.transform = `scaleX(${sx}) scaleY(1.15)`;
+      item.style.transform = `scaleX(${sx}) scaleY(1.1)`;
     });
     item.addEventListener('mouseleave', () => {
       const sx = item.dataset.fitScaleX || 1;

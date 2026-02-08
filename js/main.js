@@ -36,17 +36,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // GALLERY: custom optimization
       if (label === 'GALLERY') {
-        item.style.fontSize = '6.5vw';
-        item.style.transform = 'scaleX(1.85)';
-        item.dataset.fitScaleX = '1.85';
+        item.style.fontSize = '7.8vw';
+        item.style.transform = 'scaleX(2.0)';
+        item.dataset.fitScaleX = '2.0';
         return;
       }
 
       // CONTACT: custom optimization
       if (label === 'CONTACT') {
-        item.style.fontSize = '6.8vw';
-        item.style.transform = 'scaleX(1.75)';
-        item.dataset.fitScaleX = '1.75';
+        item.style.fontSize = '8.2vw';
+        item.style.transform = 'scaleX(1.9)';
+        item.dataset.fitScaleX = '1.9';
         return;
       }
 

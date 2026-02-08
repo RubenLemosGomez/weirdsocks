@@ -32,24 +32,24 @@ document.addEventListener('DOMContentLoaded', () => {
       // HOME: custom optimization
       if (label === 'HOME') {
         item.style.fontSize = '12vh';
-        item.style.transform = 'scaleX(2.1)';
-        item.dataset.fitScaleX = '2.1';
+        item.style.transform = 'scaleX(2.3)';
+        item.dataset.fitScaleX = '2.3';
         return;
       }
 
       // MUSIC: custom optimization
       if (label === 'MUSIC') {
         item.style.fontSize = '11vh';
-        item.style.transform = 'scaleX(2.05)';
-        item.dataset.fitScaleX = '2.05';
+        item.style.transform = 'scaleX(2.25)';
+        item.dataset.fitScaleX = '2.25';
         return;
       }
 
       // TOUR: custom optimization
       if (label === 'TOUR') {
         item.style.fontSize = '12.5vh';
-        item.style.transform = 'scaleX(2.15)';
-        item.dataset.fitScaleX = '2.15';
+        item.style.transform = 'scaleX(2.35)';
+        item.dataset.fitScaleX = '2.35';
         return;
       }
 

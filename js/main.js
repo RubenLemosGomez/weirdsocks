@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // they need more breathing room to avoid being clipped by overflow-x hidden.
     const INSET_NORMAL_PX = 6;
     const INSET_ACTIVE_PX = 22;
-    const INSET_LONG_LABEL_EXTRA_PX = 16; // less width for long labels (more margin, but not clipped)
+    const INSET_LONG_LABEL_EXTRA_PX = 40; // much more margin for GALLERY/CONTACT
 
     allNavLinks.forEach(item => {
       // Remember base font size (from CSS) so we can scale per word predictably
@@ -48,11 +48,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const label = (item.textContent || '').trim().toUpperCase();
       const isLongLabel = label === 'GALLERY' || label === 'CONTACT';
       
-      // Reduce font size for GALLERY and CONTACT so they don't overflow
+      // Drastically reduce font size for GALLERY and CONTACT so they don't overflow
       if (isLongLabel) {
         const baseFontPx = parseFloat(item.dataset.baseFontSize);
         if (Number.isFinite(baseFontPx) && baseFontPx > 0) {
-          item.style.fontSize = `${baseFontPx * 0.85}px`;
+          item.style.fontSize = `${baseFontPx * 0.60}px`;
         }
       }
       

@@ -130,20 +130,23 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   flex: 1;
+  width: 100%;
 }
 
 .nav-item {
-  font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+  font-family: 'Georgia', 'Times New Roman', 'Garamond', serif;
   font-size: 70px;
   font-weight: 900;
-  letter-spacing: 8px;
+  letter-spacing: 0.35em;
   text-decoration: none;
   text-transform: uppercase;
   position: relative;
-  display: inline-block;
+  display: block;
+  text-align: center;
+  width: 100%;
   transition: all 0.3s ease;
 }
 

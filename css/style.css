@@ -113,11 +113,12 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 60px 20px;
+  align-items: stretch;
+  justify-content: stretch;
+  padding: 0;
   opacity: 0;
   transition: opacity 0.8s ease;
+  overflow: hidden;
 }
 
 .main-wrapper.visible {
@@ -131,14 +132,15 @@ body {
   flex-direction: column;
   gap: 0;
   align-items: stretch;
-  justify-content: center;
+  justify-content: stretch;
   flex: 1;
   width: 100%;
+  overflow: hidden;
 }
 
 .nav-item {
   font-family: 'Georgia', 'Times New Roman', 'Garamond', serif;
-  font-size: 10vw;
+  font-size: 15vh;
   font-weight: 900;
   letter-spacing: 0;
   text-decoration: none;
@@ -150,11 +152,12 @@ body {
   text-align: center;
   width: 100%;
   flex: 1;
-  overflow: hidden;
+  overflow: visible;
   line-height: 1;
-  transform: scaleX(3);
+  white-space: nowrap;
+  transform: scaleX(1);
   transform-origin: center center;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .nav-item.white {
@@ -168,15 +171,15 @@ body {
 }
 
 .nav-item:hover {
-  transform: scaleX(3) scaleY(1.1);
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 /* Bottom Gallery */
 .bottom-gallery {
   display: flex;
   justify-content: center;
-  padding-bottom: 40px;
+  align-items: stretch;
+  padding: 0;
 }
 
 @keyframes wave {
@@ -600,12 +603,12 @@ body {
 
 @media (max-width: 768px) {
   .nav-item {
-    font-size: 10vw;
+    font-size: 12vh;
     letter-spacing: 0;
   }
   
   .nav-item:hover {
-    transform: scaleX(3) scaleY(1.1);
+    opacity: 0.85;
   }
   
   .nav a {
@@ -649,12 +652,12 @@ body {
 
 @media (max-width: 480px) {
   .nav-item {
-    font-size: 10vw;
+    font-size: 10vh;
     letter-spacing: 0;
   }
   
   .nav-item:hover {
-    transform: scaleX(3) scaleY(1.1);
+    opacity: 0.85;
   }
   
   .nav a {

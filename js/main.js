@@ -15,19 +15,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Fit each nav text to fill its container width
   function fitNavItems() {
-    // Select all nav links: index page (.center-nav .nav-item, .bottom-gallery .nav-item)
-    // and inner pages (.nav a)
     const allNavLinks = document.querySelectorAll(
       '.center-nav .nav-item, .bottom-gallery .nav-item, .nav a'
     );
     allNavLinks.forEach(item => {
-      // Reset transform to measure natural width
-      item.style.transform = 'scaleX(1) scaleY(1)';
-      // Use viewport width as reference to ensure edge-to-edge
-      const containerWidth = document.documentElement.clientWidth;
+      // Reset transform to measure natural text width
+      item.style.transform = 'none';
+      // Force reflow so measurement is accurate
+      void item.offsetWidth;
+      const containerWidth = window.innerWidth;
       const textWidth = item.scrollWidth;
       if (textWidth > 0 && containerWidth > 0) {
-        const scaleX = containerWidth / textWidth;
+        // Scale to 99% of viewport to avoid horizontal scrollbar
+        const scaleX = (containerWidth * 0.99) / textWidth;
         item.style.transform = `scaleX(${scaleX})`;
         item.dataset.fitScaleX = scaleX;
       }

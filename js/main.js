@@ -26,9 +26,13 @@ document.addEventListener('DOMContentLoaded', () => {
       '.center-nav .nav-item, .bottom-gallery .nav-item, .nav a'
     );
 
-    const MAX_SCALE_X = 2.0; // max horizontal distortion (readable)
-    const MAX_FONT_BOOST = 1.45; // per-word size increase to reduce empty margins
-    const EDGE_INSET_PX = 16; // safety inset to avoid edge clipping
+    const MAX_SCALE_X = 2.2; // a bit wider while staying readable
+    const MAX_FONT_BOOST = 1.65; // help short words reach edges more
+
+    // Insets are per-side. Active links have strong glow (text-shadow) so
+    // they need more breathing room to avoid being clipped by overflow-x hidden.
+    const INSET_NORMAL_PX = 6;
+    const INSET_ACTIVE_PX = 22;
 
     allNavLinks.forEach(item => {
       // Remember base font size (from CSS) so we can scale per word predictably
@@ -44,7 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const containerWidth = item.getBoundingClientRect().width;
       if (!(containerWidth > 0)) return;
 
-      const targetWidth = Math.max(0, containerWidth - EDGE_INSET_PX);
+      const perSideInset = item.classList.contains('active') ? INSET_ACTIVE_PX : INSET_NORMAL_PX;
+      const targetWidth = Math.max(0, containerWidth - (perSideInset * 2));
       if (!(targetWidth > 0)) return;
 
       const computed = window.getComputedStyle(item);

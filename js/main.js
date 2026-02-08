@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     );
 
     const MAX_SCALE_X = 2.2; // keep distortion readable (slightly less)
-    const EDGE_INSET_PX = 4; // safety inset to avoid edge clipping
+    const EDGE_INSET_PX = 16; // safety inset to avoid edge clipping
 
     allNavLinks.forEach(item => {
       // Remember the original font-size so we can adjust predictably

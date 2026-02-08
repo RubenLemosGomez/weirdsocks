@@ -26,49 +26,48 @@ document.addEventListener('DOMContentLoaded', () => {
       '.center-nav .nav-item, .bottom-gallery .nav-item, .nav a'
     );
 
-    const MAX_SCALE_X = 2.2; // a bit wider while staying readable
-    const MAX_FONT_BOOST = 1.65; // help short words reach edges more
-
-    // Insets are per-side. Active links have strong glow (text-shadow) so
-    // they need more breathing room to avoid being clipped by overflow-x hidden.
+    const MAX_SCALE_X = 2.2;
+    const MAX_FONT_BOOST = 1.65;
     const INSET_NORMAL_PX = 6;
     const INSET_ACTIVE_PX = 22;
-    const INSET_LONG_LABEL_EXTRA_PX = 40; // much more margin for GALLERY/CONTACT
 
     allNavLinks.forEach(item => {
-      // Remember base font size (from CSS) so we can scale per word predictably
+      const label = (item.textContent || '').trim().toUpperCase();
+
+      // GALLERY: custom optimization
+      if (label === 'GALLERY') {
+        item.style.fontSize = '6.5vw';
+        item.style.transform = 'scaleX(1.85)';
+        item.dataset.fitScaleX = '1.85';
+        return;
+      }
+
+      // CONTACT: custom optimization
+      if (label === 'CONTACT') {
+        item.style.fontSize = '6.8vw';
+        item.style.transform = 'scaleX(1.75)';
+        item.dataset.fitScaleX = '1.75';
+        return;
+      }
+
+      // For all other items: use the complex auto-fit logic
       if (!item.dataset.baseFontSize) {
         item.dataset.baseFontSize = window.getComputedStyle(item).fontSize;
       }
 
-      // Reset transform to measure accurately
       item.style.transform = 'none';
       item.style.fontSize = item.dataset.baseFontSize;
-      
-      const label = (item.textContent || '').trim().toUpperCase();
-      const isLongLabel = label === 'GALLERY' || label === 'CONTACT';
-      
-      // Drastically reduce font size for GALLERY and CONTACT so they don't overflow
-      if (isLongLabel) {
-        const baseFontPx = parseFloat(item.dataset.baseFontSize);
-        if (Number.isFinite(baseFontPx) && baseFontPx > 0) {
-          item.style.fontSize = `${baseFontPx * 0.60}px`;
-        }
-      }
-      
       void item.offsetWidth;
 
       const containerWidth = item.getBoundingClientRect().width;
       if (!(containerWidth > 0)) return;
 
       let perSideInset = item.classList.contains('active') ? INSET_ACTIVE_PX : INSET_NORMAL_PX;
-      if (isLongLabel) perSideInset += INSET_LONG_LABEL_EXTRA_PX;
       const targetWidth = Math.max(0, containerWidth - (perSideInset * 2));
       if (!(targetWidth > 0)) return;
 
       const computed = window.getComputedStyle(item);
 
-      // Measure real rendered text width using a temporary span
       const measureTextWidth = () => {
         const measurer = document.createElement('span');
         measurer.textContent = item.textContent || '';
@@ -92,12 +91,8 @@ document.addEventListener('DOMContentLoaded', () => {
       let textWidth = measureTextWidth();
       if (!(textWidth > 0)) return;
 
-      // Desired scale to touch both edges
       let desiredScaleX = targetWidth / textWidth;
 
-      // If the word is very short, it would need too much scaleX.
-      // Instead, increase its font-size (bounded) so it can still
-      // reach the same margins with a readable scaleX.
       if (desiredScaleX > MAX_SCALE_X) {
         const baseFontPx = parseFloat(item.dataset.baseFontSize);
         if (Number.isFinite(baseFontPx) && baseFontPx > 0) {

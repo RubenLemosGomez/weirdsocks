@@ -13,24 +13,54 @@ document.addEventListener('DOMContentLoaded', () => {
     fitNavItems();
   }, 2500);
 
+  // Refit once fonts are ready (important for accurate text measurement)
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(() => {
+      fitNavItems();
+    });
+  }
+
   // Fit each nav text to fill its container width
   function fitNavItems() {
     const allNavLinks = document.querySelectorAll(
       '.center-nav .nav-item, .bottom-gallery .nav-item, .nav a'
     );
     allNavLinks.forEach(item => {
-      // Reset transform to measure natural text width
+      // Reset transform to measure accurately
       item.style.transform = 'none';
-      // Force reflow so measurement is accurate
       void item.offsetWidth;
-      const containerWidth = window.innerWidth;
-      const textWidth = item.scrollWidth;
-      if (textWidth > 0 && containerWidth > 0) {
-        // Scale to 99% of viewport to avoid horizontal scrollbar
-        const scaleX = (containerWidth * 0.99) / textWidth;
-        item.style.transform = `scaleX(${scaleX})`;
-        item.dataset.fitScaleX = scaleX;
-      }
+
+      const containerWidth = item.getBoundingClientRect().width;
+      if (!(containerWidth > 0)) return;
+
+      const computed = window.getComputedStyle(item);
+
+      // Measure real rendered text width using a temporary span
+      const measurer = document.createElement('span');
+      measurer.textContent = item.textContent || '';
+      measurer.style.position = 'absolute';
+      measurer.style.left = '-99999px';
+      measurer.style.top = '-99999px';
+      measurer.style.whiteSpace = 'nowrap';
+      measurer.style.fontFamily = computed.fontFamily;
+      measurer.style.fontSize = computed.fontSize;
+      measurer.style.fontWeight = computed.fontWeight;
+      measurer.style.fontStyle = computed.fontStyle;
+      measurer.style.letterSpacing = computed.letterSpacing;
+      measurer.style.textTransform = computed.textTransform;
+      measurer.style.lineHeight = computed.lineHeight;
+      document.body.appendChild(measurer);
+
+      const textWidth = measurer.getBoundingClientRect().width;
+      measurer.remove();
+
+      if (!(textWidth > 0)) return;
+
+      // Scale so the word touches both edges (no margin factor)
+      const scaleX = containerWidth / textWidth;
+      item.style.transformOrigin = 'center center';
+      item.style.transform = `scaleX(${scaleX})`;
+      item.dataset.fitScaleX = String(scaleX);
     });
   }
 
@@ -61,11 +91,11 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   allItems.forEach(item => {
     item.addEventListener('mouseenter', () => {
-      const sx = item.dataset.fitScaleX || 1;
+      const sx = Number(item.dataset.fitScaleX || 1);
       item.style.transform = `scaleX(${sx}) scaleY(1.1)`;
     });
     item.addEventListener('mouseleave', () => {
-      const sx = item.dataset.fitScaleX || 1;
+      const sx = Number(item.dataset.fitScaleX || 1);
       item.style.transform = `scaleX(${sx}) scaleY(1)`;
     });
   });

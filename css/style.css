@@ -129,7 +129,7 @@ body {
 .center-nav {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 0;
   align-items: stretch;
   justify-content: center;
   flex: 1;
@@ -138,15 +138,22 @@ body {
 
 .nav-item {
   font-family: 'Georgia', 'Times New Roman', 'Garamond', serif;
-  font-size: 70px;
+  font-size: 10vw;
   font-weight: 900;
-  letter-spacing: 0.35em;
+  letter-spacing: 0;
   text-decoration: none;
   text-transform: uppercase;
   position: relative;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   width: 100%;
+  flex: 1;
+  overflow: hidden;
+  line-height: 1;
+  transform: scaleX(3);
+  transform-origin: center center;
   transition: all 0.3s ease;
 }
 
@@ -161,7 +168,7 @@ body {
 }
 
 .nav-item:hover {
-  transform: scale(1.05);
+  transform: scaleX(3) scaleY(1.1);
   opacity: 0.8;
 }
 
@@ -593,12 +600,12 @@ body {
 
 @media (max-width: 768px) {
   .nav-item {
-    font-size: 52px;
-    letter-spacing: 8px;
+    font-size: 10vw;
+    letter-spacing: 0;
   }
   
   .nav-item:hover {
-    letter-spacing: 12px;
+    transform: scaleX(3) scaleY(1.1);
   }
   
   .nav a {
@@ -642,12 +649,12 @@ body {
 
 @media (max-width: 480px) {
   .nav-item {
-    font-size: 38px;
-    letter-spacing: 5px;
+    font-size: 10vw;
+    letter-spacing: 0;
   }
   
   .nav-item:hover {
-    letter-spacing: 9px;
+    transform: scaleX(3) scaleY(1.1);
   }
   
   .nav a {

@@ -26,13 +26,32 @@ document.addEventListener('DOMContentLoaded', () => {
       '.center-nav .nav-item, .bottom-gallery .nav-item, .nav a'
     );
 
-    const MAX_SCALE_X = 2.2;
-    const MAX_FONT_BOOST = 1.65;
-    const INSET_NORMAL_PX = 6;
-    const INSET_ACTIVE_PX = 22;
-
     allNavLinks.forEach(item => {
       const label = (item.textContent || '').trim().toUpperCase();
+
+      // HOME: custom optimization
+      if (label === 'HOME') {
+        item.style.fontSize = '12vh';
+        item.style.transform = 'scaleX(2.1)';
+        item.dataset.fitScaleX = '2.1';
+        return;
+      }
+
+      // MUSIC: custom optimization
+      if (label === 'MUSIC') {
+        item.style.fontSize = '11vh';
+        item.style.transform = 'scaleX(2.05)';
+        item.dataset.fitScaleX = '2.05';
+        return;
+      }
+
+      // TOUR: custom optimization
+      if (label === 'TOUR') {
+        item.style.fontSize = '12.5vh';
+        item.style.transform = 'scaleX(2.15)';
+        item.dataset.fitScaleX = '2.15';
+        return;
+      }
 
       // GALLERY: custom optimization
       if (label === 'GALLERY') {
@@ -50,65 +69,10 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // For all other items: use the complex auto-fit logic
-      if (!item.dataset.baseFontSize) {
-        item.dataset.baseFontSize = window.getComputedStyle(item).fontSize;
-      }
-
-      item.style.transform = 'none';
-      item.style.fontSize = item.dataset.baseFontSize;
-      void item.offsetWidth;
-
-      const containerWidth = item.getBoundingClientRect().width;
-      if (!(containerWidth > 0)) return;
-
-      let perSideInset = item.classList.contains('active') ? INSET_ACTIVE_PX : INSET_NORMAL_PX;
-      const targetWidth = Math.max(0, containerWidth - (perSideInset * 2));
-      if (!(targetWidth > 0)) return;
-
-      const computed = window.getComputedStyle(item);
-
-      const measureTextWidth = () => {
-        const measurer = document.createElement('span');
-        measurer.textContent = item.textContent || '';
-        measurer.style.position = 'absolute';
-        measurer.style.left = '-99999px';
-        measurer.style.top = '-99999px';
-        measurer.style.whiteSpace = 'nowrap';
-        measurer.style.fontFamily = computed.fontFamily;
-        measurer.style.fontSize = window.getComputedStyle(item).fontSize;
-        measurer.style.fontWeight = computed.fontWeight;
-        measurer.style.fontStyle = computed.fontStyle;
-        measurer.style.letterSpacing = computed.letterSpacing;
-        measurer.style.textTransform = computed.textTransform;
-        measurer.style.lineHeight = computed.lineHeight;
-        document.body.appendChild(measurer);
-        const width = measurer.getBoundingClientRect().width;
-        measurer.remove();
-        return width;
-      };
-
-      let textWidth = measureTextWidth();
-      if (!(textWidth > 0)) return;
-
-      let desiredScaleX = targetWidth / textWidth;
-
-      if (desiredScaleX > MAX_SCALE_X) {
-        const baseFontPx = parseFloat(item.dataset.baseFontSize);
-        if (Number.isFinite(baseFontPx) && baseFontPx > 0) {
-          const neededBoost = desiredScaleX / MAX_SCALE_X;
-          const appliedBoost = Math.min(neededBoost, MAX_FONT_BOOST);
-          item.style.fontSize = `${baseFontPx * appliedBoost}px`;
-          void item.offsetWidth;
-          textWidth = measureTextWidth();
-          if (textWidth > 0) desiredScaleX = targetWidth / textWidth;
-        }
-      }
-
-      const scaleX = Math.min(desiredScaleX, MAX_SCALE_X);
-      item.style.transformOrigin = 'center center';
-      item.style.transform = `scaleX(${scaleX})`;
-      item.dataset.fitScaleX = String(scaleX);
+      // Fallback for any other items (shouldn't happen but just in case)
+      item.style.fontSize = '8vw';
+      item.style.transform = 'scaleX(2.0)';
+      item.dataset.fitScaleX = '2.0';
     });
   }
 

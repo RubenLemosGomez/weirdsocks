@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     );
 
     const MAX_SCALE_X = 2.2; // keep distortion readable (slightly less)
+    const EDGE_INSET_PX = 4; // safety inset to avoid edge clipping
 
     allNavLinks.forEach(item => {
       // Remember the original font-size so we can adjust predictably
@@ -41,6 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const containerWidth = item.getBoundingClientRect().width;
       if (!(containerWidth > 0)) return;
+
+      const targetWidth = Math.max(0, containerWidth - EDGE_INSET_PX);
+      if (!(targetWidth > 0)) return;
 
       const computed = window.getComputedStyle(item);
 
@@ -69,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!(textWidth > 0)) return;
 
       // Desired scale to touch both edges
-      let desiredScaleX = containerWidth / textWidth;
+      let desiredScaleX = targetWidth / textWidth;
 
       // If distortion would be too extreme, increase font size so we can
       // still reach the edges while keeping scaleX readable.
@@ -80,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
           item.style.fontSize = `${currentFontPx * fontBoost}px`;
           void item.offsetWidth;
           textWidth = measureTextWidth();
-          if (textWidth > 0) desiredScaleX = containerWidth / textWidth;
+          if (textWidth > 0) desiredScaleX = targetWidth / textWidth;
         }
       }
 

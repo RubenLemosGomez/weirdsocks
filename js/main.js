@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
       '.center-nav .nav-item, .bottom-gallery .nav-item, .nav a'
     );
 
-    const MAX_SCALE_X = 2.4; // keep distortion readable
+    const MAX_SCALE_X = 2.2; // keep distortion readable (slightly less)
 
     allNavLinks.forEach(item => {
       // Remember the original font-size so we can adjust predictably
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
   allItems.forEach(item => {
     item.addEventListener('mouseenter', () => {
       const sx = Number(item.dataset.fitScaleX || 1);
-      item.style.transform = `scaleX(${sx}) scaleY(1.1)`;
+      item.style.transform = `scaleX(${sx}) scaleY(1.07)`;
     });
     item.addEventListener('mouseleave', () => {
       const sx = Number(item.dataset.fitScaleX || 1);

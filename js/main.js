@@ -44,13 +44,22 @@ document.addEventListener('DOMContentLoaded', () => {
       // Reset transform to measure accurately
       item.style.transform = 'none';
       item.style.fontSize = item.dataset.baseFontSize;
+      
+      const label = (item.textContent || '').trim().toUpperCase();
+      const isLongLabel = label === 'GALLERY' || label === 'CONTACT';
+      
+      // Reduce font size for GALLERY and CONTACT so they don't overflow
+      if (isLongLabel) {
+        const baseFontPx = parseFloat(item.dataset.baseFontSize);
+        if (Number.isFinite(baseFontPx) && baseFontPx > 0) {
+          item.style.fontSize = `${baseFontPx * 0.85}px`;
+        }
+      }
+      
       void item.offsetWidth;
 
       const containerWidth = item.getBoundingClientRect().width;
       if (!(containerWidth > 0)) return;
-
-      const label = (item.textContent || '').trim().toUpperCase();
-      const isLongLabel = label === 'GALLERY' || label === 'CONTACT';
 
       let perSideInset = item.classList.contains('active') ? INSET_ACTIVE_PX : INSET_NORMAL_PX;
       if (isLongLabel) perSideInset += INSET_LONG_LABEL_EXTRA_PX;
